@@ -6,7 +6,7 @@ let printType (tp: FsType): string =
     | FsType.Mapped mp -> mp.Name
     | FsType.TODO -> "obj"
     | FsType.Array at ->
-        sprintf "ResizeArray<%s>" (printType at)
+        sprintf "Array<%s>" (printType at)
     | FsType.Union un ->
         if un.Types.Length = 1 then
             sprintf "%s%s" (printType un.Types.[0]) (if un.Option then " option" else "")
